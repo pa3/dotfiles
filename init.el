@@ -3,10 +3,11 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
+(global-auto-revert-mode t)
 
 ;; Packages auto-installation grabbed from Emacs Prelude
 (defvar my-packages
-  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme))
+  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme js2-mode js-comint js2-refactor markdown-mode))
 
 (defun my-packages-installed-p ()
   (let (have-uninstalled)
@@ -32,7 +33,7 @@
 (blink-cursor-mode -1)
 (require 'helm-config)
 (helm-mode 1)
-(load-theme 'monokai)
+(add-hook 'after-init-hook (lambda () (load-theme 'monokai)))
 (define-key global-map [remap find-file] 'helm-find-files)
 (define-key global-map [remap occur] 'helm-occur)
 (define-key global-map [remap list-buffers] 'helm-buffers-list)
@@ -49,18 +50,42 @@
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . handlebars-mode))
 
-(dired "~/Coding/")
+(dired "~/coding/")
 
-(add-to-list 'load-path "~/opt/tern/emacs/")
-(autoload 'tern-mode "tern.el" nil t)
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+;; C-m is not RETURN
+(define-key input-decode-map [?\C-m] [C-m])
+
+(make-variable-buffer-local 'js2-ignored-warnings)
+(defadvice js2-report-warning (around ignore-some-warnings activate)
+  (unless (member (ad-get-arg 0) js2-ignored-warnings)
+	ad-do-it))
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+
+;; Ignore chai assertion
+(add-hook 'js2-mode-hook
+	  (lambda ()
+	    (when (string-match "\\.test\\.js\\'" buffer-file-name)
+	      (add-to-list 'js2-ignored-warnings "msg.no.side.effects"))))
+
+(require 'js-comint)
+(setq inferior-js-program-command "node")
+(add-hook 'js2-mode-hook '(lambda () 
+			    (local-set-key "\C-x\C-e" 'js-send-last-sexp)
+			    (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
+			    (local-set-key "\C-cb" 'js-send-buffer)
+			    (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
+			    (local-set-key "\C-cl" 'js-load-file-and-go)
+			    ))
+(add-hook 'js2-mode-hook #'js2-refactor-mode)
+(js2r-add-keybindings-with-prefix "C-c C-r")
+(setenv "NODE_NO_READLINE" "1")
 
 (require 'wgrep)
 
 (require 'helm-swoop)
 (global-set-key (kbd "M-i") 'helm-swoop)
-
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -69,7 +94,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
+    ("557c283f4f9d461f897b8cac5329f1f39fac785aa684b78949ff329c33f947ec" "c59857e3e950131e0c17c65711f1812d20a54b829115b7c522672ae6ba0864cc" "6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
  '(handlebars-basic-offset 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
