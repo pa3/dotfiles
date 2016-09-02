@@ -7,7 +7,7 @@
 
 ;; Packages auto-installation grabbed from Emacs Prelude
 (defvar my-packages
-  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme js2-mode js-comint js2-refactor markdown-mode))
+  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme js2-mode js-comint js2-refactor markdown-mode scss-mode))
 
 (defun my-packages-installed-p ()
   (let (have-uninstalled)
@@ -82,6 +82,11 @@
 (js2r-add-keybindings-with-prefix "C-c C-r")
 (setenv "NODE_NO_READLINE" "1")
 
+
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
+(yas-global-mode 1)
+
 (require 'wgrep)
 
 (require 'helm-swoop)
@@ -95,7 +100,8 @@
  '(custom-safe-themes
    (quote
     ("557c283f4f9d461f897b8cac5329f1f39fac785aa684b78949ff329c33f947ec" "c59857e3e950131e0c17c65711f1812d20a54b829115b7c522672ae6ba0864cc" "6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
- '(handlebars-basic-offset 4))
+ '(handlebars-basic-offset 4)
+ '(scss-compile-at-save nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
