@@ -6,7 +6,7 @@
 
 ;; Packages auto-installation grabbed from Emacs Prelude
 (defvar my-packages
-  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme))
+  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme geiser))
 
 (defun my-packages-installed-p ()
   (let (have-uninstalled)
@@ -16,11 +16,14 @@
 
 (unless (my-packages-installed-p)
   (message "%s" "Refreshing its package database...")
-  (package-refresh-contents)
+n  (package-refresh-contents)
   (message "%s" " done.")
   (dolist (p my-packages)
     (when (not (package-installed-p p))
       (package-install p))))
+
+
+(add-hook 'after-init-hook '(lambda () (load-theme 'monokai t)))
 
 
 (setq tab-width 4)
@@ -32,7 +35,6 @@
 (blink-cursor-mode -1)
 (require 'helm-config)
 (helm-mode 1)
-(load-theme 'monokai)
 (define-key global-map [remap find-file] 'helm-find-files)
 (define-key global-map [remap occur] 'helm-occur)
 (define-key global-map [remap list-buffers] 'helm-buffers-list)
@@ -49,7 +51,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . handlebars-mode))
 
-(dired "~/Coding/")
+(dired "~/coding/")
 
 (add-to-list 'load-path "~/opt/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
@@ -70,6 +72,7 @@
  '(custom-safe-themes
    (quote
     ("6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
+ '(geiser-active-implementations (quote (chicken)))
  '(handlebars-basic-offset 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
