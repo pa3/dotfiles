@@ -17,7 +17,7 @@
 
 (unless (my-packages-installed-p)
   (message "%s" "Refreshing its package database...")
-n  (package-refresh-contents)
+  (package-refresh-contents)
   (message "%s" " done.")
   (dolist (p my-packages)
     (when (not (package-installed-p p))
