@@ -3,10 +3,12 @@
 # key: test
 # --
 const sinon = require('sinon');
-const sinonStubPromise = require('sinon-stub-promise');
 const chai = require('chai');
+const sinonChai = require('sinon-chai');
+const sinonStubPromise = require('sinon-stub-promise');
+
 const expect = chai.expect;
-chai.use(require('sinon-chai'));
+chai.use(sinonChai);
 sinonStubPromise(sinon);
 
 $1

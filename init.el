@@ -1,13 +1,17 @@
 (require 'package)
-;;(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+;;(setq package-archives '(
+;;("gnu" . "http://elpa.gnu.org/packages/")
+;;                     ("marmalade" . "http://marmalade-repo.org/packages/")
+;;                     ("melpa" . "http://melpa.org/packages/")))
+;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
 (global-auto-revert-mode t)
 
 ;; Packages auto-installation grabbed from Emacs Prelude
 (defvar my-packages
-  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme js2-mode js-comint js2-refactor markdown-mode scss-mode))
+  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme js2-mode js-comint js2-refactor markdown-mode scss-mode flycheck))
 
 (defun my-packages-installed-p ()
   (let (have-uninstalled)
@@ -24,7 +28,24 @@
       (package-install p))))
 
 
-(setq tab-width 4)
+(global-flycheck-mode)
+;;(setq flycheck-checkers '(javascript-eslint))
+(flycheck-add-mode 'javascript-eslint 'js2-mode)
+(flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
+
+(defun my/use-eslint-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint_d/bin/eslint_d.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+
+(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+
+(setq tab-width 2)
 (setq inhibit-startup-message t)
 (setq default-frame-alist '((vertical-scroll-bars . nil)
                             (tool-bar-lines . 0)
@@ -63,6 +84,7 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
 
+
 ;; Ignore chai assertion
 (add-hook 'js2-mode-hook
 	  (lambda ()
@@ -100,8 +122,16 @@
  '(custom-safe-themes
    (quote
     ("557c283f4f9d461f897b8cac5329f1f39fac785aa684b78949ff329c33f947ec" "c59857e3e950131e0c17c65711f1812d20a54b829115b7c522672ae6ba0864cc" "6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
- '(handlebars-basic-offset 4)
- '(scss-compile-at-save nil))
+ '(flycheck-javascript-eslint-executable nil)
+ '(flycheck-temp-prefix "flycheck")
+ '(handlebars-basic-offset 2)
+ '(indent-tabs-mode nil)
+ '(js-indent-level 2)
+ '(js2-basic-offset 2)
+ '(js2-strict-missing-semi-warning nil)
+ '(js2-strict-trailing-comma-warning nil)
+ '(scss-compile-at-save nil)
+ '(standard-indent 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
