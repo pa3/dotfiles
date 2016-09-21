@@ -11,7 +11,7 @@
 
 ;; Packages auto-installation grabbed from Emacs Prelude
 (defvar my-packages
-  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme js2-mode js-comint js2-refactor markdown-mode scss-mode flycheck))
+  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme geiser js2-mode js-comint js2-refactor markdown-mode scss-mode flycheck))
 
 (defun my-packages-installed-p ()
   (let (have-uninstalled)
@@ -26,7 +26,6 @@
   (dolist (p my-packages)
     (when (not (package-installed-p p))
       (package-install p))))
-
 
 (global-flycheck-mode)
 ;;(setq flycheck-checkers '(javascript-eslint))
@@ -46,6 +45,9 @@
 (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
 
 (setq tab-width 2)
+
+(add-hook 'after-init-hook '(lambda () (load-theme 'monokai t)))
+
 (setq inhibit-startup-message t)
 (setq default-frame-alist '((vertical-scroll-bars . nil)
                             (tool-bar-lines . 0)
@@ -54,7 +56,7 @@
 (blink-cursor-mode -1)
 (require 'helm-config)
 (helm-mode 1)
-(add-hook 'after-init-hook (lambda () (load-theme 'monokai)))
+
 (define-key global-map [remap find-file] 'helm-find-files)
 (define-key global-map [remap occur] 'helm-occur)
 (define-key global-map [remap list-buffers] 'helm-buffers-list)
@@ -131,7 +133,8 @@
  '(js2-strict-missing-semi-warning nil)
  '(js2-strict-trailing-comma-warning nil)
  '(scss-compile-at-save nil)
- '(standard-indent 2))
+ '(standard-indent 2)
+ '(geiser-active-implementations (quote (chicken))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
