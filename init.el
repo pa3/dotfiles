@@ -126,15 +126,16 @@
     ("557c283f4f9d461f897b8cac5329f1f39fac785aa684b78949ff329c33f947ec" "c59857e3e950131e0c17c65711f1812d20a54b829115b7c522672ae6ba0864cc" "6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
  '(flycheck-javascript-eslint-executable nil)
  '(flycheck-temp-prefix "flycheck")
+ '(geiser-active-implementations (quote (chicken)))
  '(handlebars-basic-offset 2)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
- '(js2-basic-offset 2)
+ '(js-switch-indent-offset 2)
+ '(js2-indent-switch-body t)
  '(js2-strict-missing-semi-warning nil)
  '(js2-strict-trailing-comma-warning nil)
  '(scss-compile-at-save nil)
- '(standard-indent 2)
- '(geiser-active-implementations (quote (chicken))))
+ '(standard-indent 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
