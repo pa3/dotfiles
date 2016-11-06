@@ -130,12 +130,11 @@
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(js-switch-indent-offset 2)
- '(js2-indent-switch-body t)
  '(js2-strict-missing-semi-warning nil)
  '(js2-strict-trailing-comma-warning nil)
  '(package-selected-packages
    (quote
-    (wgrep-helm scss-mode monokai-theme markdown-mode js2-refactor js-comint helm-swoop helm-ls-git geiser flycheck)))
+    (rainbow-delimiters wgrep-helm scss-mode monokai-theme markdown-mode js2-refactor js-comint helm-swoop helm-ls-git geiser flycheck)))
  '(scss-compile-at-save nil)
  '(standard-indent 2))
 (custom-set-faces
