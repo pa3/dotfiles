@@ -4,14 +4,30 @@
 ;;("gnu" . "http://elpa.gnu.org/packages/")
 ;;                     ("marmalade" . "http://marmalade-repo.org/packages/")
 ;;                     ("melpa" . "http://melpa.org/packages/")))
-;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
 (global-auto-revert-mode t)
 
 ;; Packages auto-installation grabbed from Emacs Prelude
 (defvar my-packages
-  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme geiser js2-mode js-comint js2-refactor markdown-mode scss-mode flycheck))
+  '(
+    flycheck
+    geiser
+    helm
+    helm-ls-git
+    helm-swoop
+    js-comint
+    js2-mode
+    js2-refactor
+    markdown-mode
+    monokai-theme
+    restclient
+    restclient-helm
+    scss-mode
+    wgrep
+    wgrep-helm
+    ))
 
 (defun my-packages-installed-p ()
   (let (have-uninstalled)
