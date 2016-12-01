@@ -1,10 +1,6 @@
 (require 'package)
-(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
-;;(setq package-archives '(
-;;("gnu" . "http://elpa.gnu.org/packages/")
-;;                     ("marmalade" . "http://marmalade-repo.org/packages/")
-;;                     ("melpa" . "http://melpa.org/packages/")))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 (global-auto-revert-mode t)
@@ -144,6 +140,9 @@
  '(flycheck-temp-prefix "flycheck")
  '(geiser-active-implementations (quote (chicken)))
  '(handlebars-basic-offset 2)
+ '(helm-ls-git-default-sources
+   (quote
+    (helm-source-ls-git-status helm-source-ls-git helm-source-ls-git-buffers)))
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(js-switch-indent-offset 2)
