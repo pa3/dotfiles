@@ -7,7 +7,7 @@
 
 ;; Packages auto-installation grabbed from Emacs Prelude
 (defvar my-packages
-  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme geiser js2-mode js-comint js2-refactor markdown-mode scss-mode flycheck))
+  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme geiser js2-mode js-comint js2-refactor markdown-mode scss-mode flycheck rainbow-delimiters))
 
 (defun my-packages-installed-p ()
   (let (have-uninstalled)
@@ -70,6 +70,8 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . handlebars-mode))
 
 (dired "~/coding/")
+
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; C-m is not RETURN
 (define-key input-decode-map [?\C-m] [C-m])
