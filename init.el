@@ -7,7 +7,24 @@
 
 ;; Packages auto-installation grabbed from Emacs Prelude
 (defvar my-packages
-  '(helm helm-ls-git helm-swoop wgrep wgrep-helm monokai-theme geiser js2-mode js-comint js2-refactor markdown-mode scss-mode flycheck rainbow-delimiters))
+  '(
+    flycheck
+    geiser
+    helm
+    helm-ls-git
+    helm-swoop
+    js-comint
+    js2-mode
+    js2-refactor
+    markdown-mode
+    monokai-theme
+    rainbow-delimiters
+    restclient
+    restclient-helm
+    scss-mode
+    wgrep
+    wgrep-helm
+    ))
 
 (defun my-packages-installed-p ()
   (let (have-uninstalled)
@@ -119,6 +136,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(backup-by-copying t)
+ '(backup-directory-alist (quote (("." . "~/.emacs.d/backup"))))
+ '(css-indent-offset 2)
  '(custom-safe-themes
    (quote
     ("557c283f4f9d461f897b8cac5329f1f39fac785aa684b78949ff329c33f947ec" "c59857e3e950131e0c17c65711f1812d20a54b829115b7c522672ae6ba0864cc" "6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
