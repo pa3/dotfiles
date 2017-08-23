@@ -24,6 +24,7 @@
     scss-mode
     wgrep
     wgrep-helm
+    yaml-mode
     ))
 
 (defun my-packages-installed-p ()
@@ -59,7 +60,7 @@
 
 (setq tab-width 2)
 
-(add-hook 'after-init-hook '(lambda () (load-theme 'monokai t)))
+(add-hook 'after-init-hook '(lambda () (load-theme 'solarized-dark t)))
 
 (setq inhibit-startup-message t)
 (setq default-frame-alist '((vertical-scroll-bars . nil)
@@ -101,6 +102,9 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
 
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
+
 
 ;; Ignore chai assertion
 (add-hook 'js2-mode-hook
@@ -141,10 +145,10 @@
  '(css-indent-offset 2)
  '(custom-safe-themes
    (quote
-    ("557c283f4f9d461f897b8cac5329f1f39fac785aa684b78949ff329c33f947ec" "c59857e3e950131e0c17c65711f1812d20a54b829115b7c522672ae6ba0864cc" "6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
+    ("3629b62a41f2e5f84006ff14a2247e679745896b5eaa1d5bcfbc904a3441b0cd" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "28130127bbf3072c1bbc7652fca7245f186bb417b3b385a5e4da57b895ffe9d8" "557c283f4f9d461f897b8cac5329f1f39fac785aa684b78949ff329c33f947ec" "c59857e3e950131e0c17c65711f1812d20a54b829115b7c522672ae6ba0864cc" "6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
  '(flycheck-javascript-eslint-executable nil)
  '(flycheck-temp-prefix "flycheck")
- '(geiser-active-implementations (quote (chicken)))
+ '(geiser-active-implementations (quote (guile)))
  '(handlebars-basic-offset 2)
  '(helm-ls-git-default-sources
    (quote
@@ -156,7 +160,7 @@
  '(js2-strict-trailing-comma-warning nil)
  '(package-selected-packages
    (quote
-    (rainbow-delimiters wgrep-helm scss-mode monokai-theme markdown-mode js2-refactor js-comint helm-swoop helm-ls-git geiser flycheck)))
+    (solarized-theme yaml-mode rainbow-delimiters wgrep-helm scss-mode monokai-theme markdown-mode js2-refactor js-comint helm-swoop helm-ls-git geiser flycheck)))
  '(scss-compile-at-save nil)
  '(standard-indent 2))
 (custom-set-faces
