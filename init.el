@@ -7,14 +7,16 @@
 (defvar my-packages
   '(
     add-node-modules-path
+    cider
+    flow-minor-mode
     flycheck
+    flycheck-flow
     geiser
+    gruvbox-theme
     helm
     helm-ls-git
     helm-swoop
     js-comint
-    js2-mode
-    js2-refactor
     load-dir
     markdown-mode
     monokai-theme
@@ -22,10 +24,10 @@
     restclient
     restclient-helm
     scss-mode
-    solarized-theme
     wgrep
     wgrep-helm
     yaml-mode
+    yasnippet
     ))
 
 (defun my-packages-installed-p ()
@@ -54,7 +56,8 @@
  '(css-indent-offset 4)
  '(custom-safe-themes
    (quote
-    ("3629b62a41f2e5f84006ff14a2247e679745896b5eaa1d5bcfbc904a3441b0cd" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "28130127bbf3072c1bbc7652fca7245f186bb417b3b385a5e4da57b895ffe9d8" "557c283f4f9d461f897b8cac5329f1f39fac785aa684b78949ff329c33f947ec" "c59857e3e950131e0c17c65711f1812d20a54b829115b7c522672ae6ba0864cc" "6c62b1cd715d26eb5aa53843ed9a54fc2b0d7c5e0f5118d4efafa13d7715c56e" default)))
+    ("021720af46e6e78e2be7875b2b5b05344f4e21fad70d17af7acfd6922386b61e" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "3fa81193ab414a4d54cde427c2662337c2cab5dd4eb17ffff0d90bca97581eb6" "ed0b4fc082715fc1d6a547650752cd8ec76c400ef72eb159543db1770a27caa7" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "8ed752276957903a270c797c4ab52931199806ccd9f0c3bb77f6f4b9e71b9272" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(flycheck-javascript-flow-args nil)
  '(flycheck-temp-prefix "flycheck")
  '(geiser-active-implementations (quote (guile)))
  '(handlebars-basic-offset 2)
@@ -63,16 +66,18 @@
     (helm-source-ls-git-status helm-source-ls-git helm-source-ls-git-buffers)))
  '(indent-tabs-mode nil)
  '(ispell-local-dictionary-alist nil)
+ '(js-expr-indent-offset 0)
  '(js-indent-level 4)
  '(js-switch-indent-offset 4)
  '(js2-strict-missing-semi-warning nil)
  '(js2-strict-trailing-comma-warning nil)
+ '(load-dir-recursive t)
  '(load-dirs t)
  '(nxml-child-indent 4)
  '(nxml-outline-child-indent 4)
  '(package-selected-packages
    (quote
-    (json-mode wgrep flow-minor-mode add-node-modules-path solarized-theme yaml-mode rainbow-delimiters wgrep-helm scss-mode monokai-theme js2-refactor js-comint helm-swoop helm-ls-git geiser flycheck)))
+    (color-theme-sanityinc-tomorrow gruvbox-theme json-mode python-mode yaml-mode wgrep-helm wgrep scss-mode restclient-helm restclient rainbow-delimiters monokai-theme markdown-mode load-dir js2-refactor js2-mode js-comint helm-swoop helm-ls-git helm geiser flycheck-flow flycheck flow-minor-mode add-node-modules-path)))
  '(scss-compile-at-save nil)
  '(sgml-basic-offset 4)
  '(standard-indent 4))
@@ -81,4 +86,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 150 :width normal :foundry "DAMA" :family "Ubuntu Mono")))))
+ '(default ((t (:weight normal :height 150 :width normal :foundry "DAMA" :family "Ubuntu Mono")))))

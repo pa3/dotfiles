@@ -3,7 +3,7 @@
 (blink-cursor-mode -1)
 (yas-global-mode 1)
 (dired "~/coding/")
-(load-theme 'solarized-dark t)
+(load-theme 'gruvbox-dark-hard t)
 
 ;; HOOKS
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
