@@ -3,10 +3,11 @@
 (blink-cursor-mode -1)
 (yas-global-mode 1)
 (dired "~/coding/")
-(load-theme 'gruvbox-dark-hard t)
+(load-theme 'gruvbox-dark-medium t)
 
 ;; HOOKS
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'rainbow-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; CUSTOMIZE

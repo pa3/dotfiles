@@ -14,6 +14,7 @@
       (setq-local flycheck-javascript-eslint-executable eslint))
     (when (and flow (file-executable-p flow))
       (setq-local flycheck-javascript-flow-executable flow))))
+
 (add-hook 'flycheck-mode-hook #'my/use-flycheck-executables-from-node-modules)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
