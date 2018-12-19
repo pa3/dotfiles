@@ -1,9 +1,11 @@
 (require 'wgrep)
 
+(global-company-mode)
+
 (blink-cursor-mode -1)
 (yas-global-mode 1)
-(dired "~/coding/")
 (load-theme 'gruvbox-dark-medium t)
+(dired "~/coding/")
 
 ;; HOOKS
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)

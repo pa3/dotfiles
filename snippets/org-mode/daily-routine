@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: Daily routine
+# key: dayplan
+# --
+
+* `(format-time-string "%d.%m")`
+
+** Daily routine:
+
+*** TODO Candidates review
+*** TODO PRs
+*** TODO emails
+*** TODO yesterday notes
+
+** Unfinished yesterday's tasks
+
+** Notest

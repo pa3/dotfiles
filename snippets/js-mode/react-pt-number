@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: PropTypes.number
+# key: ptn
+# --
+
+PropTypes.number.isRequired,
