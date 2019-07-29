@@ -25,6 +25,7 @@
     markdown-mode
     monokai-theme
     pomodoro
+    powerline
     prettier-js
     rainbow-mode
     rainbow-delimiters

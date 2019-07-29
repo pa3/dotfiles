@@ -23,3 +23,6 @@
 ;; BINDINGS
 ;; C-m is not RETURN
 (define-key input-decode-map [?\C-m] [C-m])
+
+;; MODE LINE THEME
+(powerline-default-theme)
