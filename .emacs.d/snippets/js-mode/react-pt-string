@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: PropTypes.string
+# key: pts
+# --
+
+PropTypes.string.isRequired,

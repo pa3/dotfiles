@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: PropTypes.arrayOf
+# key: pta
+# --
+
+PropTypes.arrayOf($0).isRequired,

@@ -1,0 +1,5 @@
+(when (memq window-system '(mac ns x))
+  (setq mac-command-modifier 'meta)
+  (setq ns-function-modifier 'control)
+  (setq ns-right-alternate-modifier 'control)
+  (exec-path-from-shell-initialize))

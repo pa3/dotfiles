@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: PropTypes.shape
+# key: ptsh
+# --
+
+PropTypes.shape({$0}).isRequired,
