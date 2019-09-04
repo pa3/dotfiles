@@ -10,6 +10,7 @@
     exec-path-from-shell
     cider
     company
+    counsel
     feature-mode
     flow-minor-mode
     flycheck
@@ -17,11 +18,13 @@
     geiser
     graphql-mode
     gruvbox-theme
-    helm
-    helm-ls-git
-    helm-swoop
+;;    helm
+;;    helm-ls-git
+;;    helm-swoop
+    ivy
     js-comint
     load-dir
+    magit
     markdown-mode
     monokai-theme
     pomodoro
@@ -35,7 +38,7 @@
     tide
     twittering-mode
     wgrep
-    wgrep-helm
+;;    wgrep-helm
     yaml-mode
     yasnippet
     ))
@@ -87,7 +90,7 @@
  '(nxml-outline-child-indent 4)
  '(package-selected-packages
    (quote
-    (pomodoro rainbow-mode color-theme-sanityinc-tomorrow gruvbox-theme json-mode python-mode yaml-mode wgrep-helm wgrep scss-mode restclient-helm restclient rainbow-delimiters monokai-theme markdown-mode load-dir js2-refactor js2-mode js-comint helm-swoop helm-ls-git helm geiser flycheck-flow flycheck flow-minor-mode add-node-modules-path)))
+    (pomodoro rainbow-mode color-theme-sanityinc-tomorrow gruvbox-theme json-mode python-mode yaml-mode wgrep-helm wgrep scss-mode restclient-helm restclient rainbow-delimiters monokai-theme markdown-mode load-dir js2-refactor js2-mode js-comint helm-swoop helm geiser flycheck-flow flycheck flow-minor-mode add-node-modules-path)))
  '(scss-compile-at-save nil)
  '(sgml-basic-offset 2)
  '(standard-indent 4))

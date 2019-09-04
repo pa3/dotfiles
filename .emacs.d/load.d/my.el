@@ -23,8 +23,8 @@
                    ("mc" . "~/coding/merchant-center-frontend/")
                    ("dayplan" . (concat "~/orgs/week-" week ".org"))))
         (file-name (eval (alist-get place places nil nil 'equal))))
-    (helm-find-files-1 file-name)))
+    (counsel-find-files file-name)))
 
-(global-set-key (kbd "C-c g") 'my/goto)
+(global-set-key (kbd "C-c p") 'my/goto)
 
 ;;; my.el ends here
