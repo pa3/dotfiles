@@ -18,9 +18,6 @@
     geiser
     graphql-mode
     gruvbox-theme
-;;    helm
-;;    helm-ls-git
-;;    helm-swoop
     ivy
     js-comint
     load-dir
@@ -38,7 +35,6 @@
     tide
     twittering-mode
     wgrep
-;;    wgrep-helm
     yaml-mode
     yasnippet
     ))
