@@ -32,6 +32,7 @@
     restclient
     restclient-helm
     scss-mode
+    slime
     tide
     twittering-mode
     wgrep
