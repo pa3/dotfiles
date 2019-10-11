@@ -2,4 +2,4 @@
 
 ln -s $PWD/.zshrc ~/.zshrc
 ln -s $PWD/.emacs.d ~/.emacs.d
-ln -s $PWD/.stumpwmrc ~/.stumpwmrc
+ln -s $PWD/.stumpwm.d ~/.stumpwm.d
