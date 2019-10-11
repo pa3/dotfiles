@@ -31,3 +31,8 @@ zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit && compinit
 # End of lines added by compinstall
+
+# StartX after login
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
