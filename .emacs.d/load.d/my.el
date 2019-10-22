@@ -1,12 +1,14 @@
-(defun my/presentation-mode-on ()
-  "Turn on presentation-friendly styling."
+(defun my/presentation-theme ()
+  "Turn on presentation-friendly theme."
+  (interactive)
   (load-theme 'gruvbox-light-hard t)
-  (set-frame-font "Menlo-21"))
+  (set-frame-font "Hack-21"))
 
-(defun my/presentation-mode-off ()
-  "Turn off presentation-friendly styling."
+(defun my/normal-theme ()
+  "Switch to my default theme."
+  (interactive)
   (load-theme 'gruvbox-dark-medium t)
-  (set-frame-font "Menlo-15"))
+  (set-frame-font "Hack-13"))
 
 (defun my/dayplan ()
   "Open daily plan file."
@@ -26,5 +28,6 @@
     (counsel-find-files file-name)))
 
 (global-set-key (kbd "C-c p") 'my/goto)
+(my/normal-theme)
 
 ;;; my.el ends here
