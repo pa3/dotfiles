@@ -9,4 +9,6 @@
 
 ;; connect to emacs
 (ql:quickload :swank)
-(swank:create-server)
+(swank:create-server :port 4005
+                     :style swank:*communication-style*
+                     :dont-close t)
