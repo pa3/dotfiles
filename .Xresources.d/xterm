@@ -1,0 +1,4 @@
+XTerm.vt100.faceName: Hack:size=13:antialias=true
+XTerm.vt100.translations: #override \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD)

@@ -1,0 +1,8 @@
+# Sound volume control
+
+"amixer set Master toggle"
+c:121
+"amixer set Master 2%-"
+c:122
+"amixer set Master 2%+"
+c:123
