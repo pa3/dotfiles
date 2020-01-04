@@ -16,3 +16,9 @@
            :family "DejaVu Sans Mono"
            :subfamily "Book"
            :size 13))
+
+(load-module "battery-portable")
+
+;; shutdown menu
+(load-module "end-session")
+(define-key *root-map* (kbd "q") "end-session")
