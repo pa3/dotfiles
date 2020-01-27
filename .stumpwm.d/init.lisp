@@ -15,9 +15,15 @@
            'xft:font
            :family "DejaVu Sans Mono"
            :subfamily "Book"
-           :size 13))
+           :size 9))
 
-(load-module "battery-portable")
+;; Show battery charge level
+(setf stumpwm:*screen-mode-line-format*
+      (flet ((battery ()
+               (let* ((level (stumpwm:run-shell-command "cat /sys/class/power_supply/BAT0/capacity" t))
+                      (level-no-newline (remove #\newline level)))
+                 (concatenate 'string "^B☢^b " level-no-newline "%"))))
+        (list "[^B%n^b] " `(:eval (funcall ,#'battery)) "%W")))
 
 ;; shutdown menu
 (load-module "end-session")
