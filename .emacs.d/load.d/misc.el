@@ -26,3 +26,8 @@
 
 ;; MODE LINE THEME
 (powerline-default-theme)
+
+
+;; I don't need backup files nor lockfiles
+(setq make-backup-files nil)
+(setq create-lockfiles nil)
