@@ -1,3 +1,5 @@
+(require 'prettier-js)
+
 (defun setup-tide-mode ()
   (interactive)
   (tide-setup)
@@ -14,6 +16,8 @@
 (setq company-tooltip-align-annotations t)
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
+(add-hook 'typescript-mode-hook #'add-node-modules-path)
+(add-hook 'typescript-mode-hook #'prettier-js-mode)
 
 ;; CT specific format options
 (setq tide-format-options '(:indentSize 2 :tabSize 2))
