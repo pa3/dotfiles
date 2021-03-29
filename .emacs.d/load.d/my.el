@@ -27,6 +27,15 @@
         (file-name (eval (alist-get place places nil nil 'equal))))
     (counsel-find-files file-name)))
 
+(defun my/short-hash (str &optional len)
+  "Make length limited hash of a string. Default len value is 6."
+  (let* ((hash (sha1 str))
+         (hash-len (length hash))
+         (result-len (or len 6)))
+    (substring hash
+               0
+               (min hash-len result-len))))
+
 (global-set-key (kbd "C-c p") 'my/goto)
 (my/normal-theme)
 
