@@ -11,6 +11,7 @@
     cider
     company
     counsel
+    eink-theme
     feature-mode
     flow-minor-mode
     flycheck
@@ -24,6 +25,7 @@
     magit
     markdown-mode
     monokai-theme
+    org-roam
     paren-face
     pomodoro
     powerline
@@ -91,6 +93,7 @@
  '(sgml-basic-offset 2)
  '(show-paren-mode t)
  '(standard-indent 4))
+ '(typescript-indent-level 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
