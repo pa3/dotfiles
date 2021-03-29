@@ -19,6 +19,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export EDITOR="emacs"
 
+export SBCL_HOME=/usr/lib/sbcl/
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -34,8 +36,14 @@ autoload -Uz compinit && compinit
 
 # StartX after login
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
+  exec ssh-agent startx
 fi
 
 # nvm
 source /usr/share/nvm/init-nvm.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/fedor/google-cloud-sdk/path.zsh.inc' ]; then . '/home/fedor/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/fedor/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/fedor/google-cloud-sdk/completion.zsh.inc'; fi

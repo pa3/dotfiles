@@ -8,11 +8,12 @@
 (dired "~/coding/")
 
 ;; HOOKS
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+;;(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook 'rainbow-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; CUSTOMIZE
+(setq global-paren-face-mode t)
 (setq tab-width 2)
 (setq inhibit-startup-message t)
 (setq default-frame-alist '((vertical-scroll-bars . nil)

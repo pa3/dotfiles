@@ -14,6 +14,6 @@ xrdb -merge $HOME/.Xresources.d/xterm-color-theme
 xbindkeys
 
 # setup displays
-xrandr --output LVDS-1 --auto --output HDMI-1 --auto --above LVDS-1
+xrandr --output VGA-1 --auto --output HDMI-1 --auto --left-of VGA-1
 
 exec stumpwm
