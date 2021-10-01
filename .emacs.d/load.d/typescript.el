@@ -1,5 +1,7 @@
 (require 'prettier-js)
 
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+
 (defun setup-tide-mode ()
   (interactive)
   (tide-setup)
