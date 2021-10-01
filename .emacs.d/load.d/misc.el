@@ -4,7 +4,6 @@
 
 (blink-cursor-mode -1)
 (yas-global-mode 1)
-(load-theme 'eink t)
 (dired "~/coding/")
 
 ;; HOOKS

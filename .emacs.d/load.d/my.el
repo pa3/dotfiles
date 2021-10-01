@@ -4,10 +4,16 @@
   (load-theme 'gruvbox-light-hard t)
   (set-frame-font "Hack-21"))
 
-(defun my/normal-theme ()
-  "Switch to my default theme."
+(defun my/light-theme ()
+  "Switch to my light theme."
   (interactive)
-  (load-theme 'gruvbox-dark-medium t)
+  (load-theme 'eink t)
+  (set-frame-font "Hack-13"))
+
+(defun my/dark-theme ()
+  "Switch to my dark theme."
+  (interactive)
+  (load-theme 'pa3-dark t)
   (set-frame-font "Hack-13"))
 
 (defun my/dayplan ()
@@ -37,6 +43,6 @@
                (min hash-len result-len))))
 
 (global-set-key (kbd "C-c p") 'my/goto)
-(my/normal-theme)
+(my/light-theme)
 
 ;;; my.el ends here
