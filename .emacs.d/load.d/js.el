@@ -17,6 +17,7 @@
 
 (add-hook 'flycheck-mode-hook #'my/use-flycheck-executables-from-node-modules)
 
+(add-to-list 'auto-mode-alist '("\\.mjs\\'" . js-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js-jsx-mode))
 
