@@ -1,6 +1,13 @@
+(require 'my-utils)
+
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
+
+;; search in project root, where root is ~/coding/PROJECT_NAME
+(defun my/counsel-ag ()
+  (interactive)
+  (counsel-ag "" (my/project-root)))
 
 (global-set-key "\C-s" 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
@@ -14,6 +21,7 @@
 (global-set-key (kbd "C-c g") 'counsel-git)
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
 (global-set-key (kbd "C-c k") 'counsel-ag)
+;;(global-set-key (kbd "C-c k") 'my/counsel-ag)
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)

@@ -1,3 +1,4 @@
+(require 'my-utils)
 (require 'prettier-js)
 
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
@@ -7,6 +8,8 @@
   (tide-setup)
   (flycheck-mode +1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (flycheck-add-next-checker 'typescript-tide 'javascript-eslint)
+  (add-hook 'flycheck-mode-hook #'my/use-flycheck-executables-from-node-modules)
   (eldoc-mode +1)
   (tide-hl-identifier-mode +1)
   ;; company is an optional dependency. You have to

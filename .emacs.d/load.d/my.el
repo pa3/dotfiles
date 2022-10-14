@@ -42,6 +42,10 @@
                0
                (min hash-len result-len))))
 
+(defun my/mount-arcadia ()
+  (interactive)
+  (shell-command "arc mount ~/arcadia"))
+
 (global-set-key (kbd "C-c p") 'my/goto)
 (my/light-theme)
 
